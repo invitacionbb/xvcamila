@@ -1,5 +1,5 @@
-﻿/* ==========================================================================
-   RESET & CONFIGURACIÃ“N GENERAL
+/* ==========================================================================
+   RESET & CONFIGURACIÓN GENERAL
    ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -23,7 +23,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Mientras el intro estÃ¡ activo, bloqueamos el scroll o mantenemos la vista en intro */
+/* Mientras el intro está activo, bloqueamos el scroll o mantenemos la vista en intro */
 body.locked-scroll {
     overflow: hidden;
     height: 100vh;
@@ -38,7 +38,7 @@ img {
 }
 
 /* ==========================================================================
-   SECCIÃ“N 0: INTRO DE VIDEO
+   SECCIÓN 0: INTRO DE VIDEO
    ========================================================================== */
 .intro-screen {
     position: fixed;
@@ -92,7 +92,7 @@ img {
     animation: fadeInScale 1.2s ease-out 1s forwards;
 }
 
-/* BotÃ³n estilo pÃ­ldora gris oscuro y letras blancas */
+/* Botón estilo píldora gris oscuro y letras blancas */
 .btn-pill-dark {
     appearance: none;
     border: none;
@@ -131,20 +131,20 @@ img {
 }
 
 /* ==========================================================================
-   SECCIÃ“N 1: HERO
+   SECCIÓN 1: HERO
    ========================================================================== */
 .hero-section {
     position: relative;
     width: 100%;
     min-height: 100dvh;
-    background-image: url('assets/images/Hero-bg.png');
+    background-image: url('assets/images/hero-bg.png');
     background-image: -webkit-image-set(
-        url('assets/images/Hero-bg.webp') type('image/webp'),
-        url('assets/images/Hero-bg.png') type('image/png')
+        url('assets/images/hero-bg.webp') type('image/webp'),
+        url('assets/images/hero-bg.png') type('image/png')
     );
     background-image: image-set(
-        url('assets/images/Hero-bg.webp') type('image/webp'),
-        url('assets/images/Hero-bg.png') type('image/png')
+        url('assets/images/hero-bg.webp') type('image/webp'),
+        url('assets/images/hero-bg.png') type('image/png')
     );
     background-size: cover;
     background-position: center;
@@ -157,7 +157,7 @@ img {
     overflow: hidden;
 }
 
-/* Flores en mÃ¡rgenes superior izquierdo e inferior derecho */
+/* Flores en márgenes superior izquierdo e inferior derecho */
 .hero-flower {
     position: absolute;
     pointer-events: none;
@@ -246,12 +246,12 @@ img {
 }
 
 /* ==========================================================================
-   SECCIÃ“N 2: PARALLAX ESTÃTICO Y SECUENCIA DE IMÃGENES EN FILA
+   SECCIÓN 2: PARALLAX ESTÁTICO Y SECUENCIA DE IMÁGENES EN FILA
    ========================================================================== */
 .sec-02-parallax-wrapper {
     position: relative;
     width: 100%;
-    /* El contenedor padre delimita exactamente hasta dÃ³nde se queda fijo el fondo sticky */
+    /* El contenedor padre delimita exactamente hasta dónde se queda fijo el fondo sticky */
 }
 
 .sec-02-sticky-bg {
@@ -305,7 +305,7 @@ img {
     will-change: opacity, transform;
 }
 
-/* 1. fecha.png: inicia arriba al entrar a la secciÃ³n */
+/* 1. fecha.png: inicia arriba al entrar a la sección */
 .scroll-float-item.item-top-fade {
     margin-top: 2vh;
 }
@@ -315,7 +315,7 @@ img {
     margin-bottom: 2vh;
 }
 
-/* TamaÃ±os armÃ³nicos segÃºn imÃ¡genes de referencia inv-03 a inv-07 */
+/* Tamaños armónicos según imágenes de referencia inv-03 a inv-07 */
 .float-picture {
     display: block;
     width: 100%;
@@ -352,7 +352,7 @@ img {
     max-width: 500px;
 }
 
-/* Contenedor de ficha con botÃ³n VER MAPA integrado en la parte inferior de la ficha blanca */
+/* Contenedor de ficha con botón VER MAPA integrado en la parte inferior de la ficha blanca */
 .ficha-card-overlay {
     position: relative;
     width: 100%;
@@ -387,7 +387,7 @@ img {
 }
 
 /* ==========================================================================
-   SECCIÃ“N 3: REGALOS (sec-03-bg.png + regalos.png)
+   SECCIÓN 3: REGALOS (sec-03-bg.png + regalos.png)
    ========================================================================== */
 .sec-03-regalos {
     position: relative;
@@ -426,7 +426,7 @@ img {
 }
 
 /* ==========================================================================
-   SECCIÃ“N 4: ASISTENCIA (sec-04-bg.png + asistencia.png + Formulario + flower03.png)
+   SECCIÓN 4: ASISTENCIA (sec-04-bg.png + asistencia.png + Formulario + flower03.png)
    ========================================================================== */
 .sec-04-asistencia {
     position: relative;
@@ -575,7 +575,7 @@ img {
     min-height: 92px;
 }
 
-/* BotÃ³n deslizable al centro ("SÃ­, AsistirÃ©" izquierda / "No podrÃ©" derecha) */
+/* Botón deslizable al centro ("Sí, Asistiré" izquierda / "No podré" derecha) */
 .slider-choice-wrapper {
     margin: 1.35rem 0 1.4rem;
     text-align: center;
@@ -710,7 +710,7 @@ img {
     transform: translateY(-2px);
 }
 
-/* Imagen flower03.png en PC: junta a la ficha rozando por encima su borde derecho con los pÃ©talos */
+/* Imagen flower03.png en PC: junta a la ficha rozando por encima su borde derecho con los pétalos */
 .flower-rsvp-right {
     position: absolute;
     right: -6%;
@@ -913,7 +913,7 @@ img {
 }
 
 /* ==========================================================================
-   ANIMACIONES GENERALES DE APARICIÃ“N AL SCROLL
+   ANIMACIONES GENERALES DE APARICIÓN AL SCROLL
    ========================================================================== */
 .reveal-item {
     opacity: 0;
@@ -938,7 +938,7 @@ img {
 }
 
 /* ==========================================================================
-   RESPONSIVE: MÃ“VIL Y TABLET (PC Y CELULAR BIEN ESTRUCTURADOS)
+   RESPONSIVE: MÓVIL Y TABLET (PC Y CELULAR BIEN ESTRUCTURADOS)
    ========================================================================== */
 @media (max-width: 768px) {
     .hero-flower {
@@ -956,7 +956,7 @@ img {
         font-size: 0.82rem;
     }
 
-    /* En mÃ³vil mantenemos el formulario recargado a la izquierda y flower03.png mÃ¡s abajo y a la derecha para tocar solo con los pÃ©talos */
+    /* En móvil mantenemos el formulario recargado a la izquierda y flower03.png más abajo y a la derecha para tocar solo con los pétalos */
     .rsvp-stage {
         min-height: 560px;
     }

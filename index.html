@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';">
-    <title>Mis XV AÃ±os - Camila</title>
+    <title>Mis XV Años - Camila</title>
     <link rel="icon" type="image/webp" sizes="128x128" href="assets/images/favicon-128.webp">
     <link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon-128.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
         <source src="assets/audio/cancion.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- SECCIÃ“N 0: INTRO DE VIDEO -->
+    <!-- SECCIÓN 0: INTRO DE VIDEO -->
     <section id="intro" class="intro-screen">
         <video id="intro-video" class="intro-video" poster="assets/images/video-poster.webp" autoplay muted loop playsinline preload="auto">
             <source src="assets/images/video-bg.webm" type="video/webm">
@@ -29,16 +29,16 @@
         <div class="intro-overlay">
             <picture>
                 <source srcset="assets/images/intro-title.webp" type="image/webp">
-                <img src="assets/images/intro-title.png" alt="Camila - Mis XV AÃ±os" class="intro-title-img" width="704" height="334" fetchpriority="high" decoding="sync">
+                <img src="assets/images/intro-title.png" alt="Camila - Mis XV Años" class="intro-title-img" width="704" height="334" fetchpriority="high" decoding="sync">
             </picture>
-            <button id="btn-open-inv" class="btn-pill-dark" type="button">Ver invitaciÃ³n</button>
+            <button id="btn-open-inv" class="btn-pill-dark" type="button">Ver invitación</button>
         </div>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL DE LA INVITACIÃ“N -->
+    <!-- CONTENIDO PRINCIPAL DE LA INVITACIÓN -->
     <main id="main-invitation" class="invitation-wrapper">
 
-        <!-- SECCIÃ“N 1: HERO -->
+        <!-- SECCIÓN 1: HERO -->
         <section id="hero" class="hero-section">
             <picture class="hero-flower hero-flower-tl" aria-hidden="true">
                 <source srcset="assets/images/flower-izq.webp" type="image/webp">
@@ -52,14 +52,14 @@
             <div class="hero-center-content reveal-item">
                 <picture>
                     <source srcset="assets/images/hero-header.webp" type="image/webp">
-                    <img src="assets/images/hero-header.png" alt="Mis XV AÃ±os Camila" class="hero-header-img" width="738" height="400" fetchpriority="high">
+                    <img src="assets/images/hero-header.png" alt="Mis XV Años Camila" class="hero-header-img" width="738" height="400" fetchpriority="high">
                 </picture>
 
                 <!-- EMBED COUNTDOWN (#1e1e1e, sin cajas ni fondos extra) -->
                 <div id="countdown" class="countdown-embed" aria-label="Cuenta regresiva">
                     <div class="cd-unit">
                         <span id="cd-days" class="cd-number">00</span>
-                        <span class="cd-label">DÃ­as</span>
+                        <span class="cd-label">Días</span>
                     </div>
                     <span class="cd-sep">:</span>
                     <div class="cd-unit">
@@ -80,14 +80,14 @@
             </div>
         </section>
 
-        <!-- SECCIÃ“N 2: PARALLAX ESTÃTICO CON ELEMENTOS FLOTANTES AL SCROLL -->
+        <!-- SECCIÓN 2: PARALLAX ESTÁTICO CON ELEMENTOS FLOTANTES AL SCROLL -->
         <section id="sec-02" class="sec-02-parallax-wrapper">
-            <!-- Fondo estÃ¡tico/fijo sticky que se bloquea al terminar vestimenta y sube junto con el contenido -->
+            <!-- Fondo estático/fijo sticky que se bloquea al terminar vestimenta y sube junto con el contenido -->
             <div class="sec-02-sticky-bg"></div>
 
             <!-- Fila de elementos flotantes que aparecen y desaparecen con el scroll -->
             <div class="sec-02-flow">
-                <!-- 1. fecha.png (Inicia en el top margin y empieza a desaparecer allÃ­ mismo) -->
+                <!-- 1. fecha.png (Inicia en el top margin y empieza a desaparecer allí mismo) -->
                 <div class="scroll-float-item item-top-fade" data-scroll-item>
                     <picture class="float-picture img-fecha">
                         <source srcset="assets/images/fecha.webp" type="image/webp">
@@ -111,23 +111,23 @@
                     </picture>
                 </div>
 
-                <!-- 4. ficha-misa.png + BotÃ³n Ver Mapa -->
+                <!-- 4. ficha-misa.png + Botón Ver Mapa -->
                 <div class="scroll-float-item" data-scroll-item>
                     <div class="ficha-card-overlay">
                         <picture class="float-picture img-ficha">
                             <source srcset="assets/images/ficha-misa.webp" type="image/webp">
-                            <img src="assets/images/ficha-misa.png" alt="Misa de AcciÃ³n de Gracias" class="float-img img-ficha" width="852" height="1081" loading="lazy" decoding="async">
+                            <img src="assets/images/ficha-misa.png" alt="Misa de Acción de Gracias" class="float-img img-ficha" width="852" height="1081" loading="lazy" decoding="async">
                         </picture>
                         <a href="https://maps.app.goo.gl/nJrUxW6HPEiEGrMu8" target="_blank" rel="noopener noreferrer" class="btn-ficha-mapa">VER MAPA</a>
                     </div>
                 </div>
 
-                <!-- 5. ficha-recepcion.png + BotÃ³n Ver Mapa -->
+                <!-- 5. ficha-recepcion.png + Botón Ver Mapa -->
                 <div class="scroll-float-item" data-scroll-item>
                     <div class="ficha-card-overlay">
                         <picture class="float-picture img-ficha">
                             <source srcset="assets/images/ficha-recepcion.webp" type="image/webp">
-                            <img src="assets/images/ficha-recepcion.png" alt="RecepciÃ³n SalÃ³n ROMA" class="float-img img-ficha" width="852" height="1000" loading="lazy" decoding="async">
+                            <img src="assets/images/ficha-recepcion.png" alt="Recepción Salón ROMA" class="float-img img-ficha" width="852" height="1000" loading="lazy" decoding="async">
                         </picture>
                         <a href="https://maps.app.goo.gl/TbmL6eWuBeBhiMa88" target="_blank" rel="noopener noreferrer" class="btn-ficha-mapa">VER MAPA</a>
                     </div>
@@ -137,31 +137,31 @@
                 <div class="scroll-float-item" data-scroll-item>
                     <picture class="float-picture img-programa">
                         <source srcset="assets/images/programa.webp" type="image/webp">
-                        <img src="assets/images/programa.png" alt="Programa El Gran DÃ­a" class="float-img img-programa" width="874" height="1357" loading="lazy" decoding="async">
+                        <img src="assets/images/programa.png" alt="Programa El Gran Día" class="float-img img-programa" width="874" height="1357" loading="lazy" decoding="async">
                     </picture>
                 </div>
 
-                <!-- 7. vestimenta.png (Ãšltima imagen: se bloquea al terminar y sube junto con el fondo) -->
+                <!-- 7. vestimenta.png (Última imagen: se bloquea al terminar y sube junto con el fondo) -->
                 <div class="scroll-float-item item-last-lock" data-scroll-item>
                     <picture class="float-picture img-vestimenta">
                         <source srcset="assets/images/vestimenta.webp" type="image/webp">
-                        <img src="assets/images/vestimenta.png" alt="CÃ³digo de Vestimenta Formal" class="float-img img-vestimenta" width="698" height="1226" loading="lazy" decoding="async">
+                        <img src="assets/images/vestimenta.png" alt="Código de Vestimenta Formal" class="float-img img-vestimenta" width="698" height="1226" loading="lazy" decoding="async">
                     </picture>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÃ“N 3: REGALOS / LLUVIA DE SOBRES -->
+        <!-- SECCIÓN 3: REGALOS / LLUVIA DE SOBRES -->
         <section id="sec-03" class="sec-03-regalos">
             <div class="sec-03-inner reveal-item">
                 <picture>
                     <source srcset="assets/images/regalos.webp" type="image/webp">
-                    <img src="assets/images/regalos.png" alt="Con CariÃ±o - Lluvia de Sobres" class="img-regalos" width="748" height="640" loading="lazy" decoding="async">
+                    <img src="assets/images/regalos.png" alt="Con Cariño - Lluvia de Sobres" class="img-regalos" width="748" height="640" loading="lazy" decoding="async">
                 </picture>
             </div>
         </section>
 
-        <!-- SECCIÃ“N 4: CONFIRMACIÃ“N DE ASISTENCIA -->
+        <!-- SECCIÓN 4: CONFIRMACIÓN DE ASISTENCIA -->
         <section id="sec-04" class="sec-04-asistencia">
             <div class="sec-04-container">
                 <!-- Imagen superior asistencia.png -->
@@ -183,23 +183,23 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="guest-count">Â¿Cuantos asistirÃ¡n?</label>
-                                    <input type="number" id="guest-count" name="guestCount" min="1" max="5" inputmode="numeric" placeholder="ej. 2 (mÃ¡x. 5)" required>
+                                    <label for="guest-count">¿Cuantos asistirán?</label>
+                                    <input type="number" id="guest-count" name="guestCount" min="1" max="5" inputmode="numeric" placeholder="ej. 2 (máx. 5)" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="guest-message">Dejar un mensaje (opcional)</label>
-                                    <textarea id="guest-message" name="guestMessage" rows="3" maxlength="100" placeholder="Â¡Los acompaÃ±amos con alegrÃ­a! (mÃ¡x. 100 caracteres)"></textarea>
+                                    <textarea id="guest-message" name="guestMessage" rows="3" maxlength="100" placeholder="¡Los acompañamos con alegría! (máx. 100 caracteres)"></textarea>
                                 </div>
 
-                                <!-- BotÃ³n deslizable al centro: Izquierda "SÃ­ AsistirÃ©" / Derecha "No podrÃ©" -->
+                                <!-- Botón deslizable al centro: Izquierda "Sí Asistiré" / Derecha "No podré" -->
                                 <div class="slider-choice-wrapper">
                                     <div class="slider-row">
-                                        <span id="lbl-si" class="slider-side-label active-choice">SÃ­, AsistirÃ©</span>
+                                        <span id="lbl-si" class="slider-side-label active-choice">Sí, Asistiré</span>
                                         <div class="attendance-slider-box">
                                             <input type="range" id="attendance-slider" min="0" max="100" value="0" step="1" aria-label="Desliza para responder">
                                         </div>
-                                        <span id="lbl-no" class="slider-side-label">No podrÃ©</span>
+                                        <span id="lbl-no" class="slider-side-label">No podré</span>
                                     </div>
                                     <p class="slider-legend">Desliza para responder</p>
                                 </div>
@@ -223,13 +223,13 @@
 
                         <!-- Nota de privacidad debajo del formulario (como en inv-09.jpg) -->
                         <p class="rsvp-privacy-note">
-                            Tu respuesta solo la verÃ¡n los<br>
+                            Tu respuesta solo la verán los<br>
                             anfitriones del evento<br>
                             <button type="button" class="link-privacy-trigger" data-open-privacy>aviso de privacidad</button> .
                         </p>
                     </div>
 
-                    <!-- Imagen flower03.png desplazada mÃ¡s abajo y mÃ¡s a la derecha para tocar solo con los pÃ©talos -->
+                    <!-- Imagen flower03.png desplazada más abajo y más a la derecha para tocar solo con los pétalos -->
                     <picture class="flower-rsvp-right" aria-hidden="true">
                         <source srcset="assets/images/flower03.webp" type="image/webp">
                         <img src="assets/images/flower03.png" alt="" width="577" height="1223" loading="lazy" decoding="async">
@@ -240,7 +240,7 @@
 
         <!-- FOOTER -->
         <footer class="site-footer">
-            <p class="footer-location">Todos los Derechos reservados, Durango, Dgo, MÃ©xico.</p>
+            <p class="footer-location">Todos los Derechos reservados, Durango, Dgo, México.</p>
             <p class="footer-copy">
                 Desarrollado por <a href="https://wa.me/526182103942" target="_blank" rel="noopener noreferrer" class="footer-brand-link">Blueberry Digital</a>.
             </p>
@@ -260,17 +260,17 @@
             <button type="button" class="privacy-modal-close" aria-label="Cerrar aviso de privacidad" data-close-privacy>&times;</button>
             <h3 id="privacy-modal-title">Aviso de Privacidad</h3>
             <p>
-                Los datos personales proporcionados en este formulario de confirmaciÃ³n (nombre, nÃºmero de asistentes y mensaje) serÃ¡n utilizados Ãºnica y exclusivamente por los anfitriones del evento social de <strong>XV AÃ±os de Camila</strong> con la finalidad de organizar la recepciÃ³n y control de asistencia.
+                Los datos personales proporcionados en este formulario de confirmación (nombre, número de asistentes y mensaje) serán utilizados única y exclusivamente por los anfitriones del evento social de <strong>XV Años de Camila</strong> con la finalidad de organizar la recepción y control de asistencia.
             </p>
             <p>
-                Su informaciÃ³n es confidencial, no serÃ¡ almacenada en bases de datos pÃºblicas ni compartida con terceros ajenos a la coordinaciÃ³n del evento. Desarrollado por <strong>Blueberry Digital</strong> (Durango, MÃ©xico).
+                Su información es confidencial, no será almacenada en bases de datos públicas ni compartida con terceros ajenos a la coordinación del evento. Desarrollado por <strong>Blueberry Digital</strong> (Durango, México).
             </p>
         </div>
     </div>
 
     <!-- BOTONES FLOTANTES FIJOS CIRCULARES (ABAJO A LA DERECHA) -->
-    <div id="floating-controls" class="floating-controls" aria-label="Controles de pÃ¡gina">
-        <button id="btn-audio-toggle" class="fab-circle" type="button" aria-label="Pausar o reproducir mÃºsica" title="MÃºsica de fondo">
+    <div id="floating-controls" class="floating-controls" aria-label="Controles de página">
+        <button id="btn-audio-toggle" class="fab-circle" type="button" aria-label="Pausar o reproducir música" title="Música de fondo">
             <!-- Icono Pausa / Play -->
             <svg id="icon-playing" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
                 <rect x="6" y="4" width="4" height="16" rx="1"></rect>
