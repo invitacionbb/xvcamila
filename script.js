@@ -96,29 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       3. CUENTA REGRESIVA (Sábado 16 de Enero - 18:00 Hrs)
-       Nota técnica: La fecha real de Sábado 16 de Enero en las artes gráficas del
-       evento es 2027-01-16T18:00:00. Si la fecha objetivo configurada ya pasó,
-       apunta automáticamente al Sábado 16 de Enero de 2027 para mantener el
-       contador activo.
+       3. CUENTA REGRESIVA (Sábado 16 de Enero de 2027 - 18:00 Hrs)
        ========================================================================== */
     const cdDays = document.getElementById('cd-days');
     const cdHours = document.getElementById('cd-hours');
     const cdMinutes = document.getElementById('cd-minutes');
     const cdSeconds = document.getElementById('cd-seconds');
 
-    const target2026 = new Date('2026-01-16T18:00:00').getTime();
-    const target2027 = new Date('2027-01-16T18:00:00').getTime();
-
-    function getTargetTimestamp() {
-        const now = Date.now();
-        return now < target2026 ? target2026 : target2027;
-    }
+    const eventTimestamp = new Date('2027-01-16T18:00:00-06:00').getTime();
 
     function updateCountdown() {
         const now = Date.now();
-        const target = getTargetTimestamp();
-        const diff = Math.max(0, target - now);
+        const diff = Math.max(0, eventTimestamp - now);
 
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
