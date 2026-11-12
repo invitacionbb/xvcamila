@@ -740,11 +740,18 @@ img {
     text-align: center;
     padding: 2rem 1.25rem;
     font-size: 0.92rem;
-    line-height: 1.6;
+    line-height: 1.65;
+}
+
+.footer-event-title {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .footer-copy {
     color: #ffffff;
+    margin-top: 0.15rem;
 }
 
 .footer-location {
@@ -989,6 +996,12 @@ img {
 
     .attendance-slider-box {
         width: 105px;
+    }
+
+    /* En versión móvil el footer se acomoda en las 5 líneas exactas solicitadas */
+    .footer-rights-chunk,
+    .footer-city-chunk {
+        display: block;
     }
 }
 
