@@ -201,11 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
        5. INTERSECTION OBSERVER PARA ANIMAR EL RESTO DEL CONTENIDO AL SCROLL
        ========================================================================== */
     const revealItems = document.querySelectorAll('.reveal-item');
-    const revealObserver = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-            } else {
+                if (entry.target.classList.contains('reveal-once')) {
+                    observer.unobserve(entry.target);
+                }
+            } else if (!entry.target.classList.contains('reveal-once')) {
                 entry.target.classList.remove('is-visible');
             }
         });
