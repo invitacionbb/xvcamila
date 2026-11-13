@@ -233,25 +233,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const sumMsg = document.getElementById('sum-msg');
     const sumMsgRow = document.getElementById('sum-msg-row');
     const btnWhatsappConfirm = document.getElementById('btn-whatsapp-confirm');
+    const sliderLegend = document.querySelector('.slider-legend');
+
+    function getAttendanceChoice() {
+        const val = Number(attendanceSlider.value);
+        if (val < 45) return 'yes';
+        if (val > 55) return 'no';
+        return 'unselected';
+    }
 
     function isDeclining() {
-        return Number(attendanceSlider.value) >= 50;
+        return getAttendanceChoice() === 'no';
+    }
+
+    function resetSliderLegendError() {
+        if (sliderLegend) {
+            sliderLegend.textContent = 'Desliza para responder';
+            sliderLegend.style.color = '';
+            sliderLegend.style.fontWeight = '';
+        }
     }
 
     function syncSliderState() {
-        if (isDeclining()) {
+        resetSliderLegendError();
+        const choice = getAttendanceChoice();
+        if (choice === 'yes') {
+            lblSi.classList.add('active-choice');
+            lblNo.classList.remove('active-choice');
+        } else if (choice === 'no') {
             lblNo.classList.add('active-choice');
             lblSi.classList.remove('active-choice');
         } else {
-            lblSi.classList.add('active-choice');
+            lblSi.classList.remove('active-choice');
             lblNo.classList.remove('active-choice');
         }
     }
 
-    // Al soltar el deslizador, se ajusta suavemente al extremo elegido (0 = Sí Asistiré, 100 = No podré)
+    // Al soltar el deslizador, se ajusta suavemente según la posición:
+    // < 45 se ajusta a 0 (Sí Asistiré), > 55 a 100 (No podré), en medio a 50 (neutro)
     attendanceSlider.addEventListener('input', syncSliderState);
     attendanceSlider.addEventListener('change', () => {
-        attendanceSlider.value = isDeclining() ? '100' : '0';
+        const choice = getAttendanceChoice();
+        if (choice === 'yes') {
+            attendanceSlider.value = '0';
+        } else if (choice === 'no') {
+            attendanceSlider.value = '100';
+        } else {
+            attendanceSlider.value = '50';
+        }
         syncSliderState();
     });
 
@@ -288,9 +317,21 @@ document.addEventListener('DOMContentLoaded', () => {
     rsvpForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        // Validar que el usuario haya seleccionado una opción deslizando
+        const choice = getAttendanceChoice();
+        if (choice === 'unselected') {
+            if (sliderLegend) {
+                sliderLegend.textContent = '¡Por favor desliza hacia "Sí" o "No" para responder!';
+                sliderLegend.style.color = '#c0392b';
+                sliderLegend.style.fontWeight = '700';
+            }
+            attendanceSlider.focus();
+            return;
+        }
+
         // Sanitización básica contra caracteres de control y límites estrictos
         const guestName = guestNameInput.value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, 80);
-        const declining = isDeclining();
+        const declining = choice === 'no';
         const parsedCount = parseInt(guestCountInput.value, 10);
         const safeCount = Number.isNaN(parsedCount) ? 1 : Math.max(1, Math.min(5, parsedCount));
         const guestCount = declining ? '0' : String(safeCount);
@@ -363,4 +404,111 @@ document.addEventListener('DOMContentLoaded', () => {
             privacyModal.hidden = true;
         }
     });
+
+    /* ==========================================================================
+       8. CARRUSEL DE FOTOS TIPO INSTAGRAM
+       ========================================================================== */
+    const igTrack = document.getElementById('ig-track');
+    const igCounter = document.getElementById('ig-counter');
+    const igBtnPrev = document.getElementById('ig-btn-prev');
+    const igBtnNext = document.getElementById('ig-btn-next');
+    const igDots = Array.from(document.querySelectorAll('.ig-dot'));
+    const totalSlides = igDots.length;
+
+    if (igTrack && totalSlides > 0) {
+        let currentIndex = 0;
+
+        function updateCarouselUI(index) {
+            currentIndex = Math.max(0, Math.min(totalSlides - 1, index));
+            if (igCounter) {
+                igCounter.textContent = `${currentIndex + 1}/${totalSlides}`;
+            }
+
+            igDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+
+            if (igBtnPrev) {
+                igBtnPrev.classList.toggle('ig-btn-disabled', currentIndex === 0);
+            }
+            if (igBtnNext) {
+                igBtnNext.classList.toggle('ig-btn-disabled', currentIndex === totalSlides - 1);
+            }
+        }
+
+        function scrollToSlide(index) {
+            const slideWidth = igTrack.clientWidth;
+            igTrack.scrollTo({
+                left: index * slideWidth,
+                behavior: 'smooth'
+            });
+            updateCarouselUI(index);
+        }
+
+        if (igBtnPrev) {
+            igBtnPrev.addEventListener('click', () => {
+                scrollToSlide(currentIndex - 1);
+            });
+        }
+
+        if (igBtnNext) {
+            igBtnNext.addEventListener('click', () => {
+                scrollToSlide(currentIndex + 1);
+            });
+        }
+
+        igDots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const idx = parseInt(dot.getAttribute('data-index'), 10);
+                if (!Number.isNaN(idx)) {
+                    scrollToSlide(idx);
+                }
+            });
+        });
+
+        // Sincronizar al terminar el desplazamiento de scroll o gesto táctil
+        let scrollTimeout;
+        igTrack.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const slideWidth = igTrack.clientWidth || 1;
+                const newIdx = Math.round(igTrack.scrollLeft / slideWidth);
+                updateCarouselUI(newIdx);
+            }, 60);
+        }, { passive: true });
+
+        // Soporte de arrastre con mouse (drag-to-slide estilo Instagram web)
+        let isDown = false;
+        let startX = 0;
+        let scrollLeftPos = 0;
+
+        igTrack.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - igTrack.offsetLeft;
+            scrollLeftPos = igTrack.scrollLeft;
+            igTrack.style.scrollBehavior = 'auto';
+            igTrack.style.scrollSnapType = 'none';
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isDown) return;
+            isDown = false;
+            igTrack.style.scrollBehavior = 'smooth';
+            igTrack.style.scrollSnapType = 'x mandatory';
+
+            const slideWidth = igTrack.clientWidth || 1;
+            const targetIdx = Math.round(igTrack.scrollLeft / slideWidth);
+            scrollToSlide(targetIdx);
+        });
+
+        igTrack.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - igTrack.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            igTrack.scrollLeft = scrollLeftPos - walk;
+        });
+
+        updateCarouselUI(0);
+    }
 });

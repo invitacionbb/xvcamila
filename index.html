@@ -31,7 +31,7 @@
                 <source srcset="assets/images/intro-title.webp" type="image/webp">
                 <img src="assets/images/intro-title.png" alt="Camila - Mis XV Años" class="intro-title-img" width="704" height="334" fetchpriority="high" decoding="sync">
             </picture>
-            <button id="btn-open-inv" class="btn-pill-dark" type="button">Ver invitación</button>
+            <button id="btn-open-inv" class="btn-pill-dark" type="button">Iniciar</button>
         </div>
     </section>
 
@@ -101,6 +101,86 @@
                         <source srcset="assets/images/padres.webp" type="image/webp">
                         <img src="assets/images/padres.png" alt="Agradecimiento y Padres" class="float-img img-padres" width="854" height="898" loading="lazy" decoding="async">
                     </picture>
+                </div>
+
+                <!-- Galería de fotos tipo Carrusel de Instagram -->
+                <div class="scroll-float-item" data-scroll-item>
+                    <div class="ig-carousel" aria-label="Galería de fotos de Camila">
+                        <div class="ig-counter" id="ig-counter" aria-live="polite">1/8</div>
+
+                        <div class="ig-track" id="ig-track">
+                            <div class="ig-slide" data-slide-index="0">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-01.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-01.jpg" alt="Foto de Camila 1" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="ig-slide" data-slide-index="1">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-02.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-02.jpg" alt="Foto de Camila 2" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="ig-slide" data-slide-index="2">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-03.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-03.jpg" alt="Foto de Camila 3" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="ig-slide" data-slide-index="3">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-04.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-04.jpg" alt="Foto de Camila 4" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="ig-slide" data-slide-index="4">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-05.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-05.jpg" alt="Foto de Camila 5" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="ig-slide" data-slide-index="5">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-06.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-06.jpg" alt="Foto de Camila 6" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="ig-slide" data-slide-index="6">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-07.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-07.jpg" alt="Foto de Camila 7" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="ig-slide" data-slide-index="7">
+                                <picture>
+                                    <source srcset="assets/images/fotos/gallery-08.webp" type="image/webp">
+                                    <img src="assets/images/fotos/gallery-08.jpg" alt="Foto de Camila 8" width="800" height="1200" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                        </div>
+
+                        <button type="button" class="ig-nav-btn ig-btn-prev" id="ig-btn-prev" aria-label="Foto anterior">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button type="button" class="ig-nav-btn ig-btn-next" id="ig-btn-next" aria-label="Siguiente foto">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+
+                        <div class="ig-dots" id="ig-dots">
+                            <button type="button" class="ig-dot active" data-index="0" aria-label="Ir a foto 1"></button>
+                            <button type="button" class="ig-dot" data-index="1" aria-label="Ir a foto 2"></button>
+                            <button type="button" class="ig-dot" data-index="2" aria-label="Ir a foto 3"></button>
+                            <button type="button" class="ig-dot" data-index="3" aria-label="Ir a foto 4"></button>
+                            <button type="button" class="ig-dot" data-index="4" aria-label="Ir a foto 5"></button>
+                            <button type="button" class="ig-dot" data-index="5" aria-label="Ir a foto 6"></button>
+                            <button type="button" class="ig-dot" data-index="6" aria-label="Ir a foto 7"></button>
+                            <button type="button" class="ig-dot" data-index="7" aria-label="Ir a foto 8"></button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 3. te-espero.png -->
@@ -195,9 +275,9 @@
                                 <!-- Botón deslizable al centro: Izquierda "Sí Asistiré" / Derecha "No podré" -->
                                 <div class="slider-choice-wrapper">
                                     <div class="slider-row">
-                                        <span id="lbl-si" class="slider-side-label active-choice">Sí, Asistiré</span>
+                                        <span id="lbl-si" class="slider-side-label">Sí, Asistiré</span>
                                         <div class="attendance-slider-box">
-                                            <input type="range" id="attendance-slider" min="0" max="100" value="0" step="1" aria-label="Desliza para responder">
+                                            <input type="range" id="attendance-slider" min="0" max="100" value="50" step="1" aria-label="Desliza para responder">
                                         </div>
                                         <span id="lbl-no" class="slider-side-label">No podré</span>
                                     </div>

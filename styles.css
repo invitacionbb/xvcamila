@@ -157,6 +157,30 @@ img {
     overflow: hidden;
 }
 
+/* Línea divisoria inferior con efecto dorado metálico */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        #7c5b1b 0%,
+        #c69e2b 15%,
+        #f8e58c 35%,
+        #fffef2 50%,
+        #f8e58c 65%,
+        #c69e2b 85%,
+        #7c5b1b 100%
+    );
+    box-shadow: 0 0 10px rgba(248, 229, 140, 0.45), 0 2px 5px rgba(0, 0, 0, 0.35);
+    z-index: 5;
+    pointer-events: none;
+}
+
 /* Flores en márgenes superior izquierdo e inferior derecho */
 .hero-flower {
     position: absolute;
@@ -338,6 +362,169 @@ img {
     max-width: 217px;
 }
 
+/* ==========================================================================
+   CARRUSEL DE FOTOS TIPO INSTAGRAM
+   ========================================================================== */
+.ig-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0d1522;
+    box-shadow: 0 16px 40px rgba(18, 38, 63, 0.16);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Badge contador superior derecho estilo Instagram (ej. 1/8) */
+.ig-counter {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    background: rgba(18, 18, 18, 0.68);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+/* Track deslizable suave */
+.ig-track {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.ig-track:active {
+    cursor: grabbing;
+}
+
+.ig-track::-webkit-scrollbar {
+    display: none;
+}
+
+.ig-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d1522;
+}
+
+.ig-slide picture,
+.ig-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* Flechas de navegación para PC */
+.ig-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.25s ease;
+    opacity: 0.9;
+}
+
+.ig-nav-btn:hover {
+    background: #ffffff;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.ig-nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.ig-btn-prev {
+    left: 10px;
+}
+
+.ig-btn-next {
+    right: 10px;
+}
+
+.ig-nav-btn.ig-btn-disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Indicadores de puntos inferiores estilo Instagram */
+.ig-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 5px 9px;
+    border-radius: 999px;
+}
+
+.ig-dot {
+    appearance: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, border-radius 0.3s ease;
+}
+
+.ig-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.ig-dot.active {
+    width: 18px;
+    border-radius: 4px;
+    background: #ffffff;
+}
+
 .img-ficha {
     max-width: 500px;
     border-radius: 18px;
@@ -410,6 +597,38 @@ img {
     justify-content: center;
     padding: 5rem 1.5rem;
     overflow: hidden;
+}
+
+/* Líneas divisorias superior e inferior con efecto dorado metálico */
+.sec-03-regalos::before,
+.sec-03-regalos::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5px; /* Línea divisoria gruesa */
+    background: linear-gradient(
+        90deg,
+        #7c5b1b 0%,
+        #c69e2b 15%,
+        #f8e58c 35%,
+        #fffef2 50%,
+        #f8e58c 65%,
+        #c69e2b 85%,
+        #7c5b1b 100%
+    );
+    box-shadow: 0 0 10px rgba(248, 229, 140, 0.45), 0 2px 5px rgba(0, 0, 0, 0.35);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.sec-03-regalos::before {
+    top: 0;
+}
+
+.sec-03-regalos::after {
+    bottom: 0;
 }
 
 .sec-03-inner {
@@ -998,6 +1217,16 @@ img {
         width: 105px;
     }
 
+    .ig-carousel {
+        max-width: 360px;
+        border-radius: 16px;
+    }
+
+    .ig-nav-btn {
+        width: 32px;
+        height: 32px;
+    }
+
     /* En versión móvil el footer se acomoda en las 5 líneas exactas solicitadas */
     .footer-rights-chunk,
     .footer-city-chunk {
@@ -1006,6 +1235,10 @@ img {
 }
 
 @media (max-width: 420px) {
+    .ig-carousel {
+        max-width: 310px;
+    }
+
     .rsvp-col-left {
         width: 88%;
     }
