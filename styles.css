@@ -370,10 +370,25 @@ img {
     width: 100%;
     max-width: 440px;
     margin: 0 auto;
+    border: 4px solid transparent;
     border-radius: 20px;
+    background: 
+        linear-gradient(#0d1522, #0d1522) padding-box,
+        linear-gradient(
+            135deg,
+            #7c5b1b 0%,
+            #c69e2b 18%,
+            #f8e58c 38%,
+            #fffef2 50%,
+            #f8e58c 62%,
+            #c69e2b 82%,
+            #7c5b1b 100%
+        ) border-box;
+    box-shadow: 
+        0 0 0 1px rgba(124, 91, 27, 0.45),
+        0 0 18px rgba(248, 229, 140, 0.42),
+        0 18px 42px rgba(18, 38, 63, 0.28);
     overflow: hidden;
-    background: #0d1522;
-    box-shadow: 0 16px 40px rgba(18, 38, 63, 0.16);
     user-select: none;
     -webkit-user-select: none;
 }
@@ -1237,6 +1252,8 @@ img {
 @media (max-width: 420px) {
     .ig-carousel {
         max-width: 310px;
+        border-width: 3px;
+        border-radius: 14px;
     }
 
     .rsvp-col-left {
