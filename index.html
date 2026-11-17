@@ -1,377 +1,353 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';">
-    <title>Mis XV Años - Camila</title>
-    <link rel="icon" type="image/webp" sizes="128x128" href="assets/images/favicon-128.webp">
-    <link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon-128.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis XV años Camila — Invitación Digital</title>
+  <link rel="icon" type="image/png" href="assets/Images/favicon.png">
+  <meta name="description" content="Invitación digital a los XV años de Camila — Sábado 16 de Enero de 2027 en Durango, Dgo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="locked-scroll">
+<body class="locked">
 
-    <!-- AUDIO DE FONDO -->
-    <audio id="bg-music" loop preload="auto">
-        <source src="assets/audio/cancion.mp3" type="audio/mpeg">
-    </audio>
+  <!-- Audio de fondo -->
+  <audio id="bg-audio" src="assets/audio/cancion.mp3" preload="auto" loop></audio>
 
-    <!-- SECCIÓN 0: INTRO DE VIDEO -->
-    <section id="intro" class="intro-screen">
-        <video id="intro-video" class="intro-video" poster="assets/images/video-poster.webp" autoplay muted loop playsinline preload="auto">
-            <source src="assets/images/video-bg.webm" type="video/webm">
-            <source src="assets/images/video-bg.mp4" type="video/mp4">
-        </video>
-        <div class="intro-overlay">
-            <picture>
-                <source srcset="assets/images/intro-title.webp" type="image/webp">
-                <img src="assets/images/intro-title.png" alt="Camila - Mis XV Años" class="intro-title-img" width="704" height="334" fetchpriority="high" decoding="sync">
-            </picture>
-            <button id="btn-open-inv" class="btn-pill-dark" type="button">Iniciar</button>
-        </div>
+  <!-- PANTALLA DE INTRO -->
+  <section id="intro" class="intro-overlay" aria-label="Bienvenida a la invitación">
+    <div class="intro-content">
+      <img src="assets/Images/intro-title.png" alt="Camila mis XV años" class="intro-title-img">
+      <img src="assets/Images/intro-sobre.png" alt="Sobre de invitación XV años 16/01/2027" class="intro-sobre-img">
+      <button type="button" id="start-btn" class="intro-pill-btn">Iniciar</button>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="main-content">
+
+    <!-- SECCIÓN HERO -->
+    <section id="hero" class="hero-section" aria-label="Portada XV Años Camila">
+      <img src="assets/Images/hero-header.png" alt="Camila mis XV años — 16 / Enero / 2027" class="hero-header-img">
     </section>
 
-    <!-- CONTENIDO PRINCIPAL DE LA INVITACIÓN -->
-    <main id="main-invitation" class="invitation-wrapper">
+    <div class="gold-divider" aria-hidden="true"></div>
 
-        <!-- SECCIÓN 1: HERO -->
-        <section id="hero" class="hero-section">
-            <picture class="hero-flower hero-flower-tl" aria-hidden="true">
-                <source srcset="assets/images/flower-izq.webp" type="image/webp">
-                <img src="assets/images/flower-izq.png" alt="" width="363" height="349" fetchpriority="high" decoding="async">
-            </picture>
-            <picture class="hero-flower hero-flower-br" aria-hidden="true">
-                <source srcset="assets/images/flower-der.webp" type="image/webp">
-                <img src="assets/images/flower-der.png" alt="" width="318" height="343" fetchpriority="high" decoding="async">
-            </picture>
-
-            <div class="hero-center-content reveal-item">
-                <picture>
-                    <source srcset="assets/images/hero-header.webp" type="image/webp">
-                    <img src="assets/images/hero-header.png" alt="Mis XV Años Camila" class="hero-header-img" width="738" height="400" fetchpriority="high">
-                </picture>
-
-                <!-- EMBED COUNTDOWN (#1e1e1e, sin cajas ni fondos extra) -->
-                <div id="countdown" class="countdown-embed" aria-label="Cuenta regresiva">
-                    <div class="cd-unit">
-                        <span id="cd-days" class="cd-number">00</span>
-                        <span class="cd-label">Días</span>
-                    </div>
-                    <span class="cd-sep">:</span>
-                    <div class="cd-unit">
-                        <span id="cd-hours" class="cd-number">00</span>
-                        <span class="cd-label">Horas</span>
-                    </div>
-                    <span class="cd-sep">:</span>
-                    <div class="cd-unit">
-                        <span id="cd-minutes" class="cd-number">00</span>
-                        <span class="cd-label">Min</span>
-                    </div>
-                    <span class="cd-sep">:</span>
-                    <div class="cd-unit">
-                        <span id="cd-seconds" class="cd-number">00</span>
-                        <span class="cd-label">Seg</span>
-                    </div>
-                </div>
+    <!-- SECCIÓN 02: PARALLAX FIJO + CUENTA REGRESIVA FUSIONADA + ELEMENTOS ASCENDENTES -->
+    <section id="sec-02" class="sec-02" aria-label="Cuenta regresiva y detalles del evento">
+      <div class="sec-02-sticky-bg" aria-hidden="true"></div>
+      <div class="sec-02-content">
+        <div id="countdown-section" class="sec-02-item countdown-merged-block reveal-on-scroll" aria-label="Cuenta regresiva">
+          <img src="assets/Images/faltan.png" alt="Faltan:" class="faltan-img">
+          <div class="flip-countdown" id="flip-countdown" role="timer" aria-label="Tiempo restante para el 16 de Enero de 2027">
+            <div class="flip-unit">
+              <div class="flip-card" data-unit="days">
+                <div class="flip-hinge flip-hinge-left" aria-hidden="true"></div>
+                <div class="flip-hinge flip-hinge-right" aria-hidden="true"></div>
+                <div class="flip-top"><span>00</span></div>
+                <div class="flip-bottom"><span>00</span></div>
+              </div>
+              <span class="flip-label">DÍAS</span>
             </div>
-        </section>
-
-        <!-- SECCIÓN 2: PARALLAX ESTÁTICO CON ELEMENTOS FLOTANTES AL SCROLL -->
-        <section id="sec-02" class="sec-02-parallax-wrapper">
-            <!-- Fondo estático/fijo sticky que se bloquea al terminar vestimenta y sube junto con el contenido -->
-            <div class="sec-02-sticky-bg"></div>
-
-            <!-- Fila de elementos flotantes que aparecen y desaparecen con el scroll -->
-            <div class="sec-02-flow">
-                <!-- 1. fecha.png (Inicia en el top margin y empieza a desaparecer allí mismo) -->
-                <div class="scroll-float-item item-top-fade" data-scroll-item>
-                    <picture class="float-picture img-fecha">
-                        <source srcset="assets/images/fecha.webp" type="image/webp">
-                        <img src="assets/images/fecha.png" alt="La Fecha: 16 de Enero" class="float-img img-fecha" width="906" height="389" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-
-                <!-- 2. padres.png -->
-                <div class="scroll-float-item" data-scroll-item>
-                    <picture class="float-picture img-padres">
-                        <source srcset="assets/images/padres.webp" type="image/webp">
-                        <img src="assets/images/padres.png" alt="Agradecimiento y Padres" class="float-img img-padres" width="854" height="898" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-
-                <!-- Galería de fotos tipo Carrusel de Instagram -->
-                <div class="scroll-float-item" data-scroll-item>
-                    <div class="ig-carousel" aria-label="Galería de fotos de Camila">
-                        <div class="ig-counter" id="ig-counter" aria-live="polite">1/8</div>
-
-                        <div class="ig-track" id="ig-track">
-                            <div class="ig-slide" data-slide-index="0">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-01.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-01.jpg" alt="Foto de Camila 1" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                            <div class="ig-slide" data-slide-index="1">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-02.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-02.jpg" alt="Foto de Camila 2" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                            <div class="ig-slide" data-slide-index="2">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-03.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-03.jpg" alt="Foto de Camila 3" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                            <div class="ig-slide" data-slide-index="3">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-04.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-04.jpg" alt="Foto de Camila 4" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                            <div class="ig-slide" data-slide-index="4">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-05.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-05.jpg" alt="Foto de Camila 5" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                            <div class="ig-slide" data-slide-index="5">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-06.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-06.jpg" alt="Foto de Camila 6" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                            <div class="ig-slide" data-slide-index="6">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-07.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-07.jpg" alt="Foto de Camila 7" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                            <div class="ig-slide" data-slide-index="7">
-                                <picture>
-                                    <source srcset="assets/images/fotos/gallery-08.webp" type="image/webp">
-                                    <img src="assets/images/fotos/gallery-08.jpg" alt="Foto de Camila 8" width="800" height="1200" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                        </div>
-
-                        <button type="button" class="ig-nav-btn ig-btn-prev" id="ig-btn-prev" aria-label="Foto anterior">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                        </button>
-                        <button type="button" class="ig-nav-btn ig-btn-next" id="ig-btn-next" aria-label="Siguiente foto">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-
-                        <div class="ig-dots" id="ig-dots">
-                            <button type="button" class="ig-dot active" data-index="0" aria-label="Ir a foto 1"></button>
-                            <button type="button" class="ig-dot" data-index="1" aria-label="Ir a foto 2"></button>
-                            <button type="button" class="ig-dot" data-index="2" aria-label="Ir a foto 3"></button>
-                            <button type="button" class="ig-dot" data-index="3" aria-label="Ir a foto 4"></button>
-                            <button type="button" class="ig-dot" data-index="4" aria-label="Ir a foto 5"></button>
-                            <button type="button" class="ig-dot" data-index="5" aria-label="Ir a foto 6"></button>
-                            <button type="button" class="ig-dot" data-index="6" aria-label="Ir a foto 7"></button>
-                            <button type="button" class="ig-dot" data-index="7" aria-label="Ir a foto 8"></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. te-espero.png -->
-                <div class="scroll-float-item" data-scroll-item>
-                    <picture class="float-picture img-te-espero">
-                        <source srcset="assets/images/te-espero.webp" type="image/webp">
-                        <img src="assets/images/te-espero.png" alt="Te Espero" class="float-img img-te-espero" width="405" height="110" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-
-                <!-- 4. ficha-misa.png + Botón Ver Mapa -->
-                <div class="scroll-float-item" data-scroll-item>
-                    <div class="ficha-card-overlay">
-                        <picture class="float-picture img-ficha">
-                            <source srcset="assets/images/ficha-misa.webp" type="image/webp">
-                            <img src="assets/images/ficha-misa.png" alt="Misa de Acción de Gracias" class="float-img img-ficha" width="852" height="1081" loading="lazy" decoding="async">
-                        </picture>
-                        <a href="https://maps.app.goo.gl/nJrUxW6HPEiEGrMu8" target="_blank" rel="noopener noreferrer" class="btn-ficha-mapa">VER MAPA</a>
-                    </div>
-                </div>
-
-                <!-- 5. ficha-recepcion.png + Botón Ver Mapa -->
-                <div class="scroll-float-item" data-scroll-item>
-                    <div class="ficha-card-overlay">
-                        <picture class="float-picture img-ficha">
-                            <source srcset="assets/images/ficha-recepcion.webp" type="image/webp">
-                            <img src="assets/images/ficha-recepcion.png" alt="Recepción Salón ROMA" class="float-img img-ficha" width="852" height="1000" loading="lazy" decoding="async">
-                        </picture>
-                        <a href="https://maps.app.goo.gl/TbmL6eWuBeBhiMa88" target="_blank" rel="noopener noreferrer" class="btn-ficha-mapa">VER MAPA</a>
-                    </div>
-                </div>
-
-                <!-- 6. programa.png -->
-                <div class="scroll-float-item" data-scroll-item>
-                    <picture class="float-picture img-programa">
-                        <source srcset="assets/images/programa.webp" type="image/webp">
-                        <img src="assets/images/programa.png" alt="Programa El Gran Día" class="float-img img-programa" width="874" height="1357" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-
-                <!-- 7. vestimenta.png (Última imagen: se bloquea al terminar y sube junto con el fondo) -->
-                <div class="scroll-float-item item-last-lock" data-scroll-item>
-                    <picture class="float-picture img-vestimenta">
-                        <source srcset="assets/images/vestimenta.webp" type="image/webp">
-                        <img src="assets/images/vestimenta.png" alt="Código de Vestimenta Formal" class="float-img img-vestimenta" width="698" height="1226" loading="lazy" decoding="async">
-                    </picture>
-                </div>
+            <div class="flip-unit">
+              <div class="flip-card" data-unit="hours">
+                <div class="flip-hinge flip-hinge-left" aria-hidden="true"></div>
+                <div class="flip-hinge flip-hinge-right" aria-hidden="true"></div>
+                <div class="flip-top"><span>00</span></div>
+                <div class="flip-bottom"><span>00</span></div>
+              </div>
+              <span class="flip-label">HORAS</span>
             </div>
-        </section>
-
-        <!-- SECCIÓN 3: REGALOS / LLUVIA DE SOBRES -->
-        <section id="sec-03" class="sec-03-regalos">
-            <div class="sec-03-inner reveal-item">
-                <picture>
-                    <source srcset="assets/images/regalos.webp" type="image/webp">
-                    <img src="assets/images/regalos.png" alt="Con Cariño - Lluvia de Sobres" class="img-regalos" width="748" height="640" loading="lazy" decoding="async">
-                </picture>
+            <div class="flip-unit">
+              <div class="flip-card" data-unit="minutes">
+                <div class="flip-hinge flip-hinge-left" aria-hidden="true"></div>
+                <div class="flip-hinge flip-hinge-right" aria-hidden="true"></div>
+                <div class="flip-top"><span>00</span></div>
+                <div class="flip-bottom"><span>00</span></div>
+              </div>
+              <span class="flip-label">MINUTOS</span>
             </div>
-        </section>
-
-        <!-- SECCIÓN 4: CONFIRMACIÓN DE ASISTENCIA -->
-        <section id="sec-04" class="sec-04-asistencia">
-            <div class="sec-04-container">
-                <!-- Imagen superior asistencia.png -->
-                <div class="asistencia-header reveal-item reveal-once">
-                    <picture>
-                        <source srcset="assets/images/asistencia.webp" type="image/webp">
-                        <img src="assets/images/asistencia.png" alt="Te Esperamos - Confirma asistencia" class="img-asistencia" width="737" height="347" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-
-                <!-- Zona inferior con formulario recargado a la izquierda y flower03.png a la derecha -->
-                <div class="rsvp-stage">
-                    <div class="rsvp-col-left reveal-item">
-                        <div class="rsvp-form-card">
-                            <form id="rsvp-form" novalidate>
-                                <div class="form-group">
-                                    <label for="guest-name">Tu Nombre</label>
-                                    <input type="text" id="guest-name" name="guestName" maxlength="80" autocomplete="name" placeholder="ej. Fam. Rodriguez" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="guest-count">¿Cuantos asistirán?</label>
-                                    <input type="number" id="guest-count" name="guestCount" min="1" max="5" inputmode="numeric" placeholder="ej. 2 (máx. 5)" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="guest-message">Dejar un mensaje (opcional)</label>
-                                    <textarea id="guest-message" name="guestMessage" rows="3" maxlength="100" placeholder="¡Los acompañamos con alegría! (máx. 100 caracteres)"></textarea>
-                                </div>
-
-                                <!-- Botón deslizable al centro: Izquierda "Sí Asistiré" / Derecha "No podré" -->
-                                <div class="slider-choice-wrapper">
-                                    <div class="slider-row">
-                                        <span id="lbl-si" class="slider-side-label">Sí, Asistiré</span>
-                                        <div class="attendance-slider-box">
-                                            <input type="range" id="attendance-slider" min="0" max="100" value="50" step="1" aria-label="Desliza para responder">
-                                        </div>
-                                        <span id="lbl-no" class="slider-side-label">No podré</span>
-                                    </div>
-                                    <p class="slider-legend">Desliza para responder</p>
-                                </div>
-
-                                <div class="form-submit-row">
-                                    <button type="submit" class="btn-submit-rsvp">ENVIAR RESPUESTA</button>
-                                </div>
-                            </form>
-
-                            <!-- Resumen de respuestas que se activa al enviar y enlaza a WhatsApp +526181669898 -->
-                            <div id="rsvp-summary" class="rsvp-summary" hidden>
-                                <p class="summary-line"><strong>Nombre:</strong> <span id="sum-name"></span></p>
-                                <p class="summary-line"><strong>Asistencia:</strong> <span id="sum-status"></span></p>
-                                <p class="summary-line"><strong>Personas:</strong> <span id="sum-count"></span></p>
-                                <p class="summary-line" id="sum-msg-row"><strong>Mensaje:</strong> <span id="sum-msg"></span></p>
-                                <a id="btn-whatsapp-confirm" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-send">
-                                    CONFIRMAR POR WHATSAPP
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Nota de privacidad debajo del formulario (como en inv-09.jpg) -->
-                        <p class="rsvp-privacy-note">
-                            Tu respuesta solo la verán los<br>
-                            anfitriones del evento<br>
-                            <button type="button" class="link-privacy-trigger" data-open-privacy>aviso de privacidad</button> .
-                        </p>
-                    </div>
-
-                    <!-- Imagen flower03.png desplazada más abajo y más a la derecha para tocar solo con los pétalos -->
-                    <picture class="flower-rsvp-right" aria-hidden="true">
-                        <source srcset="assets/images/flower03.webp" type="image/webp">
-                        <img src="assets/images/flower03.png" alt="" width="577" height="1223" loading="lazy" decoding="async">
-                    </picture>
-                </div>
+            <div class="flip-unit">
+              <div class="flip-card" data-unit="seconds">
+                <div class="flip-hinge flip-hinge-left" aria-hidden="true"></div>
+                <div class="flip-hinge flip-hinge-right" aria-hidden="true"></div>
+                <div class="flip-top"><span>00</span></div>
+                <div class="flip-bottom"><span>00</span></div>
+              </div>
+              <span class="flip-label">SEGUNDOS</span>
             </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="site-footer">
-            <p class="footer-event-title">Invitación digital | Mis XV años Camila</p>
-            <p class="footer-location">
-                <span class="footer-rights-chunk">© 2026 Todos los Derechos reservados,</span>
-                <span class="footer-city-chunk">Durango, Dgo. México.</span>
-            </p>
-            <p class="footer-copy">
-                Desarrollado por <a href="https://wa.me/526182103942" target="_blank" rel="noopener noreferrer" class="footer-brand-link">Blueberry Digital</a>.
-            </p>
-            <p class="footer-email">
-                <a href="mailto:luisblueberry@gmail.com" class="footer-mail-link">luisblueberry@gmail.com</a>
-                <span class="footer-sep">|</span>
-                <button type="button" class="footer-privacy-link" data-open-privacy>Aviso de Privacidad</button>
-            </p>
-        </footer>
-
-    </main>
-
-    <!-- MODAL DE AVISO DE PRIVACIDAD -->
-    <div id="privacy-modal" class="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" hidden>
-        <div class="privacy-modal-backdrop" data-close-privacy></div>
-        <div class="privacy-modal-dialog">
-            <button type="button" class="privacy-modal-close" aria-label="Cerrar aviso de privacidad" data-close-privacy>&times;</button>
-            <h3 id="privacy-modal-title">Aviso de Privacidad</h3>
-            <p>
-                Los datos personales proporcionados en este formulario de confirmación (nombre, número de asistentes y mensaje) serán utilizados única y exclusivamente por los anfitriones del evento social de <strong>XV Años de Camila</strong> con la finalidad de organizar la recepción y control de asistencia.
-            </p>
-            <p>
-                Su información es confidencial, no será almacenada en bases de datos públicas ni compartida con terceros ajenos a la coordinación del evento. Desarrollado por <strong>Blueberry Digital</strong> (Durango, México).
-            </p>
+          </div>
         </div>
-    </div>
 
-    <!-- BOTONES FLOTANTES FIJOS CIRCULARES (ABAJO A LA DERECHA) -->
-    <div id="floating-controls" class="floating-controls" aria-label="Controles de página">
-        <button id="btn-audio-toggle" class="fab-circle" type="button" aria-label="Pausar o reproducir música" title="Música de fondo">
-            <!-- Icono Pausa / Play -->
-            <svg id="icon-playing" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <rect x="6" y="4" width="4" height="16" rx="1"></rect>
-                <rect x="14" y="4" width="4" height="16" rx="1"></rect>
-            </svg>
-            <svg id="icon-paused" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="display:none;">
-                <path d="M8 5v14l11-7z"></path>
-            </svg>
+        <div class="sec-02-item reveal-on-scroll">
+          <img src="assets/Images/padres.png" alt="Sábado 16 de Enero 2027 — Mis Padres y Mis Padrinos" class="content-img content-img-padres">
+        </div>
+
+        <div class="sec-02-item reveal-on-scroll">
+          <div class="ficha-wrapper">
+            <img src="assets/Images/ficha-misa.png" alt="Misa de Acción de Gracias — Templo Expiatorio del Sagrado Corazón de Jesús" class="content-img ficha-img">
+            <a href="https://maps.app.goo.gl/nJrUxW6HPEiEGrMu8" target="_blank" rel="noopener noreferrer" class="map-btn">Ver Mapa</a>
+          </div>
+        </div>
+
+        <div class="sec-02-item reveal-on-scroll">
+          <div class="ficha-wrapper">
+            <img src="assets/Images/ficha-recepcion.png" alt="Recepción — Salón Roma" class="content-img ficha-img">
+            <a href="https://maps.app.goo.gl/TbmL6eWuBeBhiMa88" target="_blank" rel="noopener noreferrer" class="map-btn">Ver Mapa</a>
+          </div>
+        </div>
+
+        <div class="sec-02-item reveal-on-scroll">
+          <img src="assets/Images/programa.png" alt="El Gran Día — Programa del evento" class="content-img content-img-programa">
+        </div>
+
+        <div class="sec-02-item sec-02-item-last reveal-on-scroll">
+          <img src="assets/Images/vestimenta.png" alt="Vestimenta Formal — Evitar gorras, tenis y playera" class="content-img content-img-vestimenta">
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-divider" aria-hidden="true"></div>
+
+    <!-- SECCIÓN VENTANA DE GALERÍA BLOQUEADA -->
+    <section id="gallery-window" class="gallery-window" aria-label="Galería de fotos">
+      <div class="gallery-fixed-layer">
+        <img src="assets/Images/fotos/gallery-07.jpg" alt="Camila" class="gallery-window-bg">
+        <button type="button" id="open-gallery-btn" class="gallery-trigger-btn" aria-label="Abrir galería de fotos">
+          <img src="assets/Images/galeria.png" alt="Ver Galería" class="gallery-trigger-img">
         </button>
+      </div>
+      <div class="gallery-window-vignette" aria-hidden="true"></div>
+    </section>
 
-        <button id="btn-scroll-top" class="fab-circle" type="button" aria-label="Subir al inicio" title="Volver arriba">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
-        </button>
+    <div class="gold-divider" aria-hidden="true"></div>
+
+    <!-- SECCIÓN 03: REGALOS Y CONFIRMACIÓN DE ASISTENCIA -->
+    <section id="sec-03" class="sec-03" aria-label="Mesa de regalos y confirmación de asistencia">
+      <div class="sec-03-inner">
+        <div class="sec-03-block reveal-on-scroll">
+          <img src="assets/Images/regalos.png" alt="Con cariño — Lluvia de Sobres" class="content-img content-img-regalos">
+        </div>
+
+        <div class="sec-03-block sec-03-asistencia reveal-on-scroll">
+          <img src="assets/Images/asistencia.png" alt="Te esperamos — Confirma asistencia" class="content-img content-img-asistencia">
+        </div>
+
+        <div class="rsvp-zone reveal-on-scroll">
+          <div class="rsvp-card-stage">
+            <form id="rsvp-form" class="rsvp-card" novalidate>
+              <div class="form-field">
+                <label for="rsvp-name">Tu Nombre</label>
+                <input type="text" id="rsvp-name" name="name" placeholder="ej. Fam. Rodriguez" autocomplete="name" required>
+              </div>
+
+              <div class="form-field">
+                <label for="rsvp-guests">Cuantos asistirán</label>
+                <input type="number" id="rsvp-guests" name="guests" min="1" max="20" inputmode="numeric" placeholder="ej. 2">
+              </div>
+
+              <div class="form-field">
+                <label for="rsvp-message">Dejar un mensaje (opcional)</label>
+                <textarea id="rsvp-message" name="message" rows="3" placeholder="¡Los acompañamos con alegría!"></textarea>
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-row">
+                  <button type="button" class="slider-side-label" id="label-yes" data-val="0">Sí Asistiré</button>
+                  <div class="slider-track-wrap">
+                    <input type="range" id="rsvp-slider" min="0" max="2" step="1" value="1" aria-label="Desliza para confirmar asistencia: izquierda Sí Asistiré, derecha No podré">
+                  </div>
+                  <button type="button" class="slider-side-label" id="label-no" data-val="2">No podré</button>
+                </div>
+                <p class="slider-hint">Desliza para responder</p>
+              </div>
+
+              <p id="rsvp-error" class="rsvp-error" role="alert" aria-live="polite"></p>
+
+              <div class="submit-row">
+                <button type="submit" class="rsvp-submit-btn">ENVIAR RESPUESTA</button>
+              </div>
+            </form>
+
+            <!-- Sobre superpuesto inferior derecho -->
+            <img src="assets/Images/sobre.png" alt="" class="rsvp-sobre-overlay" aria-hidden="true">
+          </div>
+
+          <div class="rsvp-privacy-note">
+            <p>Tu respuesta solo la verán los<br>anfitriones del evento.</p>
+            <button type="button" class="privacy-link-btn" data-open-privacy>aviso de privacidad</button>
+          </div>
+
+          <!-- Resumen de confirmación generado al enviar -->
+          <div id="rsvp-summary" class="rsvp-summary hidden" aria-live="polite">
+            <h3 class="summary-title">Resumen de tu confirmación</h3>
+            <dl class="summary-list">
+              <div class="summary-item">
+                <dt>Nombre</dt>
+                <dd id="summary-name"></dd>
+              </div>
+              <div class="summary-item">
+                <dt>Respuesta</dt>
+                <dd id="summary-status"></dd>
+              </div>
+              <div class="summary-item" id="summary-guests-row">
+                <dt>Asistentes</dt>
+                <dd id="summary-guests"></dd>
+              </div>
+              <div class="summary-item" id="summary-message-row">
+                <dt>Mensaje</dt>
+                <dd id="summary-message"></dd>
+              </div>
+            </dl>
+            <div class="summary-actions">
+              <a id="whatsapp-confirm-link" href="https://wa.me/526181669898" target="_blank" rel="noopener noreferrer" class="whatsapp-confirm-btn">
+                Confirmar por WhatsApp
+              </a>
+              <button type="button" id="edit-rsvp-btn" class="edit-rsvp-btn">Editar respuesta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="gold-divider" aria-hidden="true"></div>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="site-footer">
+    <div class="footer-inner">
+      <h2 class="footer-title">Mis XV años Camila / Invitacion Digital</h2>
+      <p class="footer-line">Todos los Derechos reservados.</p>
+      <p class="footer-line">Durango, Dgo. México</p>
+      <div class="footer-dev-block">
+        <p class="footer-line">
+          Desarrollado por
+          <a href="https://wa.me/526182103942" target="_blank" rel="noopener noreferrer" class="blueberry-link" id="blueberry-link">Blueberry Digital</a>
+        </p>
+        <div class="blueberry-hover-details" id="blueberry-details">
+          <a href="mailto:luisblueberry@gmail.com" class="footer-sub-link">luisblueberry@gmail.com</a>
+          <span class="footer-sep" aria-hidden="true">•</span>
+          <button type="button" class="footer-sub-link footer-privacy-btn" data-open-privacy>Aviso de Privacidad</button>
+        </div>
+      </div>
     </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <!-- BOTONES FLOTANTES FIJOS -->
+  <div id="floating-controls" class="floating-controls" aria-label="Controles rápidos">
+    <button type="button" id="audio-toggle-btn" class="floating-btn" aria-label="Pausar o reproducir música" title="Música">
+      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <rect x="6" y="5" width="4" height="14" rx="1.2"></rect>
+        <rect x="14" y="5" width="4" height="14" rx="1.2"></rect>
+      </svg>
+      <svg class="icon-play hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M8 5.5v13l11-6.5-11-6.5z"></path>
+      </svg>
+    </button>
+    <button type="button" id="scroll-top-btn" class="floating-btn" aria-label="Subir al inicio" title="Subir al Hero">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5"></path>
+        <path d="M5 12l7-7 7 7"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- MODAL GALERÍA INTERACTIVA TIPO INSTAGRAM -->
+  <div id="gallery-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Galería de fotos de Camila" hidden>
+    <button type="button" id="close-gallery-btn" class="modal-close-circle" aria-label="Cerrar galería">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="ig-container">
+      <!-- Encabezado tipo Instagram -->
+      <header class="ig-header">
+        <div class="ig-profile">
+          <img src="assets/Images/fotos/gallery-01.jpeg" alt="Perfil Camila" class="ig-avatar">
+          <div class="ig-profile-meta">
+            <span class="ig-username">camila.xv2027</span>
+            <span class="ig-location">Durango, Dgo. México</span>
+          </div>
+        </div>
+        <div class="ig-view-tabs" role="tablist" aria-label="Modo de vista de galería">
+          <button type="button" class="ig-tab active" id="tab-feed" role="tab" aria-selected="true" title="Vista carrusel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+            </svg>
+          </button>
+          <button type="button" class="ig-tab" id="tab-grid" role="tab" aria-selected="false" title="Vista cuadrícula">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Vista Carrusel / Post Tipo Instagram -->
+      <div id="ig-feed-view" class="ig-feed-view">
+        <div class="ig-media-stage" id="ig-media-stage">
+          <img id="ig-active-photo" src="assets/Images/fotos/gallery-01.jpeg" alt="Fotografía de Camila">
+          <div class="ig-doubletap-heart" id="ig-doubletap-heart" aria-hidden="true">♥</div>
+          <button type="button" id="ig-prev-btn" class="ig-nav-btn ig-prev" aria-label="Foto anterior">‹</button>
+          <button type="button" id="ig-next-btn" class="ig-nav-btn ig-next" aria-label="Foto siguiente">›</button>
+          <span class="ig-counter" id="ig-counter">1 / 8</span>
+        </div>
+
+        <div class="ig-actions-bar">
+          <div class="ig-actions-left">
+            <button type="button" id="ig-like-btn" class="ig-like-btn" aria-label="Me gusta" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+            <span class="ig-likes-count" id="ig-likes-count">15 Me gusta</span>
+          </div>
+          <div class="ig-dots" id="ig-dots" aria-hidden="true"></div>
+        </div>
+
+        <p class="ig-caption">
+          <strong>camila.xv2027</strong> Mis XV Años — 16 de Enero de 2027 ✨💙
+        </p>
+
+        <!-- Tira inferior de miniaturas -->
+        <div class="ig-thumb-strip" id="ig-thumb-strip" aria-label="Seleccionar fotografía"></div>
+      </div>
+
+      <!-- Vista Cuadrícula Tipo Perfil Instagram -->
+      <div id="ig-grid-view" class="ig-grid-view hidden" aria-label="Cuadrícula de fotografías"></div>
+    </div>
+  </div>
+
+  <!-- SUB-VENTANA AVISO DE PRIVACIDAD -->
+  <div id="privacy-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" hidden>
+    <div class="privacy-dialog">
+      <button type="button" id="close-privacy-btn" class="modal-close-circle modal-close-small" aria-label="Cerrar aviso de privacidad">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <h3 id="privacy-modal-title">Aviso de Privacidad</h3>
+      <p>
+        La información que proporcionas en este formulario (tu nombre, número de asistentes y mensaje opcional) es estrictamente confidencial y será utilizada únicamente por los anfitriones del evento de <strong>Mis XV Años de Camila</strong> para la organización, asignación de lugares y confirmación de asistencia.
+      </p>
+      <p>
+        Tus datos no se almacenan en bases de datos públicas ni se comparten con terceros; el envío de tu respuesta se realiza de forma directa vía WhatsApp hacia los anfitriones del evento.
+      </p>
+      <p class="privacy-contact">
+        Para dudas o soporte técnico respecto a esta invitación digital: <a href="mailto:luisblueberry@gmail.com">luisblueberry@gmail.com</a>.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
